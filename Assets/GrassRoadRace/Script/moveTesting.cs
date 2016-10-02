@@ -199,9 +199,9 @@ public class moveTesting : MonoBehaviour {
 
         
         //掉落的話
-        //if (gvrViewerMain.transform.position.y <= fallY && fall==false) {
-        //    falling();
-        //}
+        if (gvrViewerMain.transform.position.y <= fallY && fall==false) {
+            falling();
+        }
         
 
     }
