@@ -170,8 +170,8 @@ public class moveTesting : MonoBehaviour {
         
 
         //過了15秒之後，如果比測定的平均還要多則移動
-        if (hour>=1 || min>=1 || sec>15 || Input.GetKey("space"))
-            if(dy >= ySave && ySave!=0 || Input.GetKey("space"))
+        if (hour>=1 || min>=1 || sec>15)
+            if(dy >= ySave && ySave!=0)
                 moveTest();
 
         
