@@ -54,5 +54,23 @@ public class KeyBoardController : MonoBehaviour {
             frontMove.Normalize();          //取得單位向量
             rb.AddForce(frontMove * force);
         }
+
+        //視角 左
+        if (Input.GetKey(KeyCode.Q))
+        {
+            tf.Rotate(new Vector3(0, -1, 0));
+        }
+
+        //視角 右
+        if (Input.GetKey(KeyCode.E))
+        {
+            tf.Rotate(new Vector3(0, 1, 0));
+        }
+
+        //跳躍
+        if (Input.GetKey(KeyCode.Space))
+        {
+            rb.AddForce(new Vector3(0, 1, 0) * force);
+        }
     }
 }
