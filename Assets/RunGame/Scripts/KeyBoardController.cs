@@ -5,9 +5,8 @@ public class KeyBoardController : MonoBehaviour {
 
     private Rigidbody rb;
     private Transform tf;
-    private Vector3 frontMove;
 
-    public float force;//控制移動的力道大小
+    public float force; //控制移動的力道大小
     
 
     // Use this for initialization
@@ -22,37 +21,37 @@ public class KeyBoardController : MonoBehaviour {
         //方向鍵 上
 	    if(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
         {
-            frontMove = tf.forward;
-            frontMove.y = 0;                //令y軸方向向量歸零
-            frontMove.Normalize();          //取得單位向量
-            rb.AddForce(frontMove * force);
+            Vector3 forward = tf.forward;
+            forward.y = 0;                //令y軸方向向量歸零
+            forward.Normalize();          //取得單位向量
+            rb.AddForce(forward * force);
         }
 
         //方向鍵 左
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            frontMove = tf.right;
-            frontMove.y = 0;                //令y軸方向向量歸零
-            frontMove.Normalize();          //取得單位向量
-            rb.AddForce(frontMove * -force);
+            Vector3 right = tf.right;
+            right.y = 0;                //令y軸方向向量歸零
+            right.Normalize();          //取得單位向量
+            rb.AddForce(right * -force);
         }
 
         //方向鍵 下
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
-            frontMove = tf.forward;
-            frontMove.y = 0;                //令y軸方向向量歸零
-            frontMove.Normalize();          //取得單位向量
-            rb.AddForce(frontMove * -force);
+            Vector3 forward = tf.forward;
+            forward.y = 0;                //令y軸方向向量歸零
+            forward.Normalize();          //取得單位向量
+            rb.AddForce(forward * -force);
         }
 
         //方向鍵 右
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            frontMove = tf.right;
-            frontMove.y = 0;                //令y軸方向向量歸零
-            frontMove.Normalize();          //取得單位向量
-            rb.AddForce(frontMove * force);
+            Vector3 right = tf.right;
+            right.y = 0;                //令y軸方向向量歸零
+            right.Normalize();          //取得單位向量
+            rb.AddForce(right * force);
         }
 
         //視角 左
