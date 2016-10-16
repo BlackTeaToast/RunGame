@@ -11,18 +11,18 @@ public class SwitchScene : MonoBehaviour{
 
     public void SwitchToMenu()
     {
-        SceneManager.LoadSceneAsync("Menu");
+        SceneManager.LoadScene("Menu");
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("Menu"));
     }
 
     public void SwitchToGame() {
-        SceneManager.LoadSceneAsync("Scene_GrassRoadRace");
+        SceneManager.LoadScene("Scene_GrassRoadRace");
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_GrassRoadRace"));
     }
 
     public void SwitchToSettingMode()
     {
-        SceneManager.LoadSceneAsync("SettingMode");
+        SceneManager.LoadScene("SettingMode");
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("SettingMode"));
     }
 
