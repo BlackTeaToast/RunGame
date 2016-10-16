@@ -6,7 +6,7 @@ public class KeyBoardController : MonoBehaviour {
     private Rigidbody rb;
     private Transform tf;
 
-    public float force; //控制移動的力道大小
+    public float force = 10; //控制移動的力道大小
     
 
     // Use this for initialization
@@ -64,6 +64,18 @@ public class KeyBoardController : MonoBehaviour {
         if (Input.GetKey(KeyCode.E))
         {
             tf.Rotate(new Vector3(0, 1, 0));
+        }
+
+        //視角 上
+        if (Input.GetKey(KeyCode.R))
+        {
+            tf.Rotate(new Vector3(-1, 0, 0));
+        }
+
+        //視角 下
+        if (Input.GetKey(KeyCode.F))
+        {
+            tf.Rotate(new Vector3(1, 0, 0));
         }
 
         //跳躍
