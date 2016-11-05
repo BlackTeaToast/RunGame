@@ -26,4 +26,9 @@ public class SwitchScene : MonoBehaviour{
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("SettingMode"));
     }
 
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 }
