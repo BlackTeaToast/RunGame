@@ -34,8 +34,8 @@ public class SwitchScene : MonoBehaviour{
 
     public void SwitchToGame4()
     {
-        SceneManager.LoadScene("Scene_GrassRoadRace 3");
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_GrassRoadRace 3"));
+        SceneManager.LoadScene("Scene_GrassRoadRace 4");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_GrassRoadRace 4"));
     }
 
     public void SwitchToSettingMode()
