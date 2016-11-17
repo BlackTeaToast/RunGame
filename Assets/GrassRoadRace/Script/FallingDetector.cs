@@ -12,11 +12,13 @@ public class FallingDetector : MonoBehaviour {
     public float fallY = 0;
     public TextMesh Title;
     public TextMesh TimeTip;
-    public Vector3 resetPosition;
+    public  Vector3 resetPosition;
 
 	// Use this for initialization
 	void Start () {
+        
         gvrViewer = GetComponent<GvrViewer>();
+        resetPosition = transform.position;
 	}
 	
 	// Update is called once per frame
