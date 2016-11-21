@@ -18,7 +18,7 @@ public class FallingDetector : MonoBehaviour {
 	void Start () {
         
         gvrViewer = GetComponent<GvrViewer>();
-        resetPosition = transform.position;
+        resetPosition = transform.position;//抓取一開始的位置並設為為重生點
 	}
 	
 	// Update is called once per frame
@@ -33,9 +33,9 @@ public class FallingDetector : MonoBehaviour {
             TimeTip.text = ((int)timeLeft).ToString();
             if (timeLeft <= 0)
             {
-                gvrViewer.transform.position = resetPosition;
+                gvrViewer.transform.position = resetPosition;//將GvrMain搬回重生點
                 isFalling = false;
-                Title.text = "";
+                Title.text = "";//將標題與副標題清空
                 TimeTip.text = "";
             }
         }

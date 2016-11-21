@@ -3,10 +3,10 @@ using System.Collections;
 
 public class CollectAndJump : MonoBehaviour {
     private Rigidbody rb;
-    public float power;
+    public float power;//向上的力量
     public int amount;//要收集的數量
-    public FallingDetector fallingDetector;
-    public bool collect;
+    public FallingDetector fallingDetector;//用來設置重生點用
+    public bool collect;//勾選此選項即為收集模式
     public TextMesh foodAmount;
     
     
