@@ -15,27 +15,45 @@ public class SwitchScene : MonoBehaviour{
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("Menu"));
     }
 
-    public void SwitchToGame() {
+    public void SwitchToRunGame1() {
         SceneManager.LoadScene("Scene_GrassRoadRace");
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_GrassRoadRace"));
     }
 
-    public void SwitchToGame2()
+    public void SwitchToRunGame2()
     {
         SceneManager.LoadScene("Scene_GrassRoadRace 1");
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_GrassRoadRace 1"));
     }
 
-    public void SwitchToGame3()
+    public void SwitchToRunGame3()
+    {
+        SceneManager.LoadScene("Scene_GrassRoadRace 2");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_GrassRoadRace 2"));
+    }
+
+    public void SwitchToCollectGame1()
     {
         SceneManager.LoadScene("Scene_Park01");
         SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_Park01"));
     }
 
-    public void SwitchToGame4()
+    public void SwitchToCollectGame2()
     {
-        SceneManager.LoadScene("Scene_GrassRoadRace 4");
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_GrassRoadRace 4"));
+        SceneManager.LoadScene("Scene_Park01");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_Park01"));
+    }
+
+    public void SwitchToCollectGame3()
+    {
+        SceneManager.LoadScene("Scene_Park01");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_Park01"));
+    }
+
+    public void SwitchToRunMachineGame()
+    {
+        SceneManager.LoadScene("Scene_Park01");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_Park01"));
     }
 
     public void SwitchToSettingMode()
