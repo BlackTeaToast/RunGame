@@ -36,7 +36,7 @@ public class GameRecorder : MonoBehaviour
     private ArrayList gameDataList;
     private bool isUpload = false;
 
-    private const string IP = "192.168.1.251";
+    private const string IP = "140.134.26.86";
     private const string PORT = "3000";
     private const string URL = "http://" + IP + ":" + PORT + "/upload/uploadGameHistory";
 

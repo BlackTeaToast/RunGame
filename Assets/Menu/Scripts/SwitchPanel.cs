@@ -4,17 +4,39 @@ using System.Collections;
 public class SwitchPanel : MonoBehaviour
 {
 
-    public GameObject panel1;
-    public GameObject panel2;
+    public GameObject MainPanel;
+    public GameObject StageTypePanel;
+    public GameObject RunStagePanel;
+    public GameObject CollectStagePanel;
 
-    public void SwitchToPanel1()
+    public void SwitchStageTypePanelToMainPanel()
     {
-        panel2.SetActive(false);
-        panel1.SetActive(true);
+        StageTypePanel.SetActive(false);
+        MainPanel.SetActive(true);
     }
-    public void SwitchToPanel2()
+    public void SwitchMainPanelToStageTypePanel()
     {
-        panel1.SetActive(false);
-        panel2.SetActive(true);
+        MainPanel.SetActive(false);
+        StageTypePanel.SetActive(true);
+    }
+    public void SwitchStageTypePanelToRunStagePanel()
+    {
+        StageTypePanel.SetActive(false);
+        RunStagePanel.SetActive(true);
+    }
+    public void SwitchRunStagePanelToStageTypePanel()
+    {
+        RunStagePanel.SetActive(false);
+        StageTypePanel.SetActive(true);
+    }
+    public void SwitchStageTypePanelToCollectStagePanel()
+    {
+        StageTypePanel.SetActive(false);
+        CollectStagePanel.SetActive(true);
+    }
+    public void SwitchCollectStagePanelToStageTypePanel()
+    {
+        CollectStagePanel.SetActive(false);
+        StageTypePanel.SetActive(true);
     }
 }
