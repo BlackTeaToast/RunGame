@@ -40,20 +40,20 @@ public class SwitchScene : MonoBehaviour{
 
     public void SwitchToCollectGame2()
     {
-        SceneManager.LoadScene("Scene_Park01");
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_Park01"));
+        SceneManager.LoadScene("Scene_Park02");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_Park02"));
     }
 
     public void SwitchToCollectGame3()
     {
-        SceneManager.LoadScene("Scene_Park01");
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_Park01"));
+        SceneManager.LoadScene("Scene_Park03");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_Park03"));
     }
 
     public void SwitchToRunMachineGame()
     {
-        SceneManager.LoadScene("Scene_Park01");
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_Park01"));
+        SceneManager.LoadScene("Scene_GrassRoadRace Line");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_GrassRoadRace Line"));
     }
 
     public void SwitchToSettingMode()
