@@ -16,8 +16,8 @@ public class SwitchScene : MonoBehaviour{
     }
 
     public void SwitchToRunGame1() {
-        SceneManager.LoadScene("Scene_GrassRoadRace");
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_GrassRoadRace"));
+        SceneManager.LoadScene("Scene_GrassRoadRace 5");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_GrassRoadRace 5"));
     }
 
     public void SwitchToRunGame2()
