@@ -5,6 +5,7 @@ public class KeyBoardController : MonoBehaviour {
 
     private Rigidbody rb;
     public Transform Head;
+   
 
     public float force = 10; //控制移動的力道大小
     
@@ -12,6 +13,7 @@ public class KeyBoardController : MonoBehaviour {
     // Use this for initialization
     void Start () {
 	    rb = GetComponent<Rigidbody>();
+        
     }
 	
 	// Update is called once per frame
@@ -54,27 +56,27 @@ public class KeyBoardController : MonoBehaviour {
         }
 
         //視角 左
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.J))
         {
-            Head.Rotate(new Vector3(0, -1, 0));
+            rb.transform.Rotate(new Vector3(0, (float)-1.5, 0));
         }
 
         //視角 右
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.L))
         {
-            Head.Rotate(new Vector3(0, 1, 0));
+            rb.transform.Rotate(new Vector3(0, (float)1.5, 0));
         }
 
         //視角 上
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKey(KeyCode.I))
         {
-            Head.Rotate(new Vector3(-1, 0, 0));
+            rb.transform.Rotate(new Vector3((float)-1.5, 0, 0));
         }
 
         //視角 下
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetKey(KeyCode.K))
         {
-            Head.Rotate(new Vector3(1, 0, 0));
+            rb.transform.Rotate(new Vector3((float)1.5, 0, 0));
         }
 
         //跳躍
@@ -82,5 +84,7 @@ public class KeyBoardController : MonoBehaviour {
         {
             rb.AddForce(new Vector3(0, 1, 0) * force);
         }
+
+       
     }
 }
