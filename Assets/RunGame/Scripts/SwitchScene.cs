@@ -22,14 +22,14 @@ public class SwitchScene : MonoBehaviour{
 
     public void SwitchToRunGame2()
     {
-        SceneManager.LoadScene("Scene_GrassRoadRace 3");
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_GrassRoadRace 3"));
+        SceneManager.LoadScene("Scene_GrassRoadRace 4");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_GrassRoadRace 4"));
     }
 
     public void SwitchToRunGame3()
     {
-        SceneManager.LoadScene("Scene_GrassRoadRace 4");
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_GrassRoadRace 4"));
+        SceneManager.LoadScene("Scene_GrassRoadRace");
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Scene_GrassRoadRace"));
     }
 
     public void SwitchToCollectGame1()
