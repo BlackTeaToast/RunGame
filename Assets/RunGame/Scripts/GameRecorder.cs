@@ -24,14 +24,14 @@ public class GameRecorder : MonoBehaviour
         public string stageName;
         public float gameTime;
         public float frequency;
-        public GameData[] gameData;
+        public int[] gameData;
     }
 
     private const float Y_MOVE_DEFAULT = 0.15f;    //預設值
     private float yMove;    //震動觸發移動的值
     private float yOld = 0;
-    private float timeLeft = 0.5f;
-    private float avg = 0;
+    private float timeLeft = 1.0f;
+    private int avg = 0;
     private int count = 0;
     private ArrayList gameDataList;
     private bool isUpload = false;
@@ -41,7 +41,7 @@ public class GameRecorder : MonoBehaviour
     private const string URL = "http://" + IP + ":" + PORT + "/upload/uploadGameHistory";
 
     public string StageName = "Default";
-    public float Frequency = 0.5f;
+    public float Frequency = 1.0f;
 
     // Use this for initialization
     void Start()
@@ -57,12 +57,12 @@ public class GameRecorder : MonoBehaviour
         {
             if (count == 0)
             {
-                gameDataList.Add(new GameData(0));
+                gameDataList.Add(0);
             }
             else
             {
                 avg /= count;
-                gameDataList.Add(new GameData(avg));
+                gameDataList.Add(avg);
             }
 
             GameHistory gameHistory = new GameHistory();
@@ -70,7 +70,7 @@ public class GameRecorder : MonoBehaviour
             gameHistory.stageName = StageName;
             gameHistory.gameTime = GameTimer.time;
             gameHistory.frequency = Frequency;
-            gameHistory.gameData = (GameData[])(gameDataList.ToArray(typeof(GameData)));
+            gameHistory.gameData = (int[])gameDataList.ToArray(typeof(int));
             isUpload = true;
             StartCoroutine(upload(gameHistory));
 
@@ -84,14 +84,14 @@ public class GameRecorder : MonoBehaviour
             {
                 if (count == 0)
                 {
-                    gameDataList.Add(new GameData(0));
+                    gameDataList.Add(0);
                 }
                 else
                 {
                     avg /= count;
-                    gameDataList.Add(new GameData(avg));
+                    gameDataList.Add(avg);
                 }
-                timeLeft = 0.5f;
+                timeLeft = 1.0f;
                 avg = 0;
                 count = 0;
             }
@@ -99,7 +99,7 @@ public class GameRecorder : MonoBehaviour
             {
                 if (dy > yMove)
                 {
-                    avg += dy;
+                    avg += (int)(dy*100);
                     count++;
                 }
             }
@@ -114,7 +114,7 @@ public class GameRecorder : MonoBehaviour
         string jsonString = JsonUtility.ToJson(gameHistory);
         Debug.Log(jsonString);
         postHeader.Add("Content-Type", "application/json");
-        postHeader.Add("Content-Length", jsonString.Length.ToString());
+        postHeader.Add("Content-Length", Encoding.UTF8.GetBytes(jsonString).Length.ToString());
         WWW www2 = new WWW(URL, Encoding.UTF8.GetBytes(jsonString), postHeader);
         yield return www2;
         try
