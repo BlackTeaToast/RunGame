@@ -8,7 +8,7 @@ public class GameTimer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        time = 0;
     }
 
     // Update is called once per frame

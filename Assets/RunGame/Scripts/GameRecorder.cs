@@ -108,16 +108,27 @@ public class GameRecorder : MonoBehaviour
         }
     }
 
-    private IEnumerator upload(GameHistory gameHistory)
+    IEnumerator upload(GameHistory gameHistory)
     {
         Dictionary<string, string> postHeader = new Dictionary<string, string>();
         string jsonString = JsonUtility.ToJson(gameHistory);
         Debug.Log(jsonString);
         postHeader.Add("Content-Type", "application/json");
         postHeader.Add("Content-Length", jsonString.Length.ToString());
-        WWW www = new WWW(URL, Encoding.UTF8.GetBytes(jsonString), postHeader);
-        yield return www;
-        print(www.text);
+        WWW www2 = new WWW(URL, Encoding.UTF8.GetBytes(jsonString), postHeader);
+        yield return www2;
+        try
+        {
+            if (string.IsNullOrEmpty(www2.error))
+                Debug.Log(www2.text);  //text of success
+            else
+                Debug.Log(www2.error);  //error
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.Message, gameObject);
+        }
+
     }
 
 }
